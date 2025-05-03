@@ -1,0 +1,236 @@
+/* 
+  Main Clients Section
+*/
+#clients {
+  /* CSS Variables */
+  --color-text: white;
+  --color-bg: 17, 24, 39;
+  --size: 18rem;
+  --gap: 5rem;
+  --duration: 60s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+
+  /* Basic styles */
+  color: var(--color-text);
+  min-height: 100vh;
+
+  /* Correct shorthand for background with center/no-repeat */
+  background: url("../../assets/Images/Author_BG.png") center no-repeat;
+}
+
+/* 
+  The first inner container: .clients 
+*/
+#clients .clients {
+  /* Additional styling if needed */
+  z-index: 1;
+
+}
+
+/* Title + separator above the list */
+#clients .clients .title {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#clients .clients seperator {
+  align-items: center;
+  height: 5px;
+  width: 150px;
+  margin: 0 auto;
+  color: #d62896;
+}
+
+/* 
+  The floatlist and list styling
+*/
+#clients .list {
+  /* You can float or position if needed; 
+     currently there's no float property, 
+     so "floatlist" might just be a container class. */
+}
+
+#clients .list {
+  font-size: 1.4rem;
+  line-height: 175%;
+  text-align: left;
+  column-count: 2;
+  column-gap: 4rem;
+  padding-left: 10vw;
+  margin: 2rem 2rem;
+}
+
+#clients .list li {
+  text-indent: 1px;
+  break-inside: avoid;
+}
+
+/* 
+  Logo Wall + Marquee
+*/
+#clients .logo-wall {
+  font-size: 1.4rem;
+  min-height: 100vh;
+  position: relative;
+  background-color: #202934;
+  color: var(--color-text);
+  padding: 4rem 0;
+  z-index: 1;
+}
+
+/* 
+  Marquee container 
+*/
+.logo-wall .marquee {
+  display: flex;
+  width: 100vw;
+  height: 30vh;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  /* Fancy glow/box-shadow */
+  box-shadow: 0 0 50px rgba(31, 227, 224, 0.843),
+              0 0 20px rgba(31, 227, 224, 0.843),
+              0 0 30px rgba(31, 227, 224, 0.843);
+
+  /* Mask on the left/right so images fade out at edges */
+  mask-image: linear-gradient(
+    var(--mask-direction, to right),
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 20%,
+    hsl(0 0% 0% / 1) 80%,
+    hsl(0 0% 0% / 0)
+  );
+
+  animation: glow 2s infinite;
+}
+
+/* Each marquee group is repeated horizontally */
+.logo-wall .marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  /* margin: 2rem; */
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll-x var(--duration) linear infinite;
+}
+
+.logo-wall .marquee--reverse .marquee__group {
+  animation-direction: reverse;
+  /* optional “offset” to stagger the start */
+  animation-delay: -3s; 
+}
+
+/* The actual marquee items (the “cards” containing images) */
+.logo-wall .marquee .marquee__item {
+  display: flex;
+  width: 350px;
+  place-content: center;
+  aspect-ratio: 16 / 9;
+  padding: calc(var(--size) / 19);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 0.9);
+  box-shadow: 0 0 10px rgb(31 227 224 / 0.843);
+  animation: glow 3s infinite; /* The glow pulse */
+  overflow: hidden;
+}
+
+/* Images inside marquee items */
+.logo-wall .marquee img {
+  /* grid-area: auto; */
+  height: auto;
+  left: 1.25rem;
+  margin: 1rem; /* Tweak as desired */
+  size-adjust: auto;
+  max-width: 90%;
+}
+
+/* Animations */
+@keyframes scroll-x {
+  from {
+    transform: translateX(var(--scroll-start));
+  }
+  to {
+    transform: translateX(var(--scroll-end));
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(31, 227, 224, 0.5), 
+                0 0 20px rgba(31, 227, 224, 0.5),
+                0 0 30px rgba(31, 227, 224, 0.5);
+  }
+  25% {
+    box-shadow: 0 0 20px rgba(31, 227, 224, 0.7),
+                0 0 30px rgba(31, 227, 224, 0.7),
+                0 0 40px rgba(31, 227, 224, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(31, 227, 224, 1),
+                0 0 40px rgba(31, 227, 224, 1),
+                0 0 50px rgba(31, 227, 224, 1);
+  }
+  75% {
+    box-shadow: 0 0 20px rgba(31, 227, 224, 0.7),
+                0 0 30px rgba(31, 227, 224, 0.7),
+                0 0 40px rgba(31, 227, 224, 0.7);
+  }
+}
+
+/* 
+  Responsive Adjustments
+*/
+
+/* Example media queries from your existing file */
+@media only screen and (max-width: 1024px) {
+  #clients .list {
+    column-count: 1;
+    padding-left: 4vw;
+    font-size: 1.3rem;
+  }
+
+  .logo-wall .marquee {
+    height: 25vh; /* optional tweak if 30vh is too tall on smaller screens */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .logo-wall .marquee {
+    height: 20vh;
+    gap: 2rem;
+  }
+
+  .logo-wall .marquee .marquee__item {
+    width: 260px;
+    aspect-ratio: 16 / 9;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .logo-wall .marquee {
+    height: 18vh;
+  }
+
+  .logo-wall .marquee .marquee__item {
+    width: 220px;
+    padding: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .logo-wall .marquee {
+    height: 16vh;
+  }
+
+  .logo-wall .marquee .marquee__item {
+    width: 180px;
+    padding: 0.5rem;
+  }
+}

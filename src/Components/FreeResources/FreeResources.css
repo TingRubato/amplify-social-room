@@ -1,0 +1,236 @@
+#free-resources {
+  min-height: 100vh;
+  font-size: 1.4rem;
+  position: relative;
+  background: #f0f0f0;
+  margin: 0 auto;
+  width: 100%;
+  padding: 8rem 5rem 8rem;
+  background: linear-gradient(215deg, #f0f0f0 0%,#fafafa 100%);
+  z-index: 2;
+}
+
+#free-resources .subcaption {
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 1rem auto;
+}
+#free-resources .expand-button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #00b1b2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+#free-resources .expand-button:hover {
+  background-color: #008a8b;
+}
+
+
+#free-resources .expand-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#free-resources a,
+#free-resources a:visited {
+  color: #f300b4;
+}
+
+#free-resources a:hover,
+#free-resources a:active {
+  color: #252934;
+}
+
+
+/* Heading */
+#free-resources .heading .title {
+  text-align: center;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+}
+
+#free-resources .heading .separator {
+  background: #f300b4;
+  width: 150px;
+  height: 2px;
+  margin: 1rem auto;
+}
+
+#free-resources .heading .subtitle {
+  font-size: 1.4rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Single Project */
+#free-resources .free-resource {
+  margin: auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2rem;
+  max-height: fit-content;
+}
+
+#free-resources .free-resource-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+#free-resources .free-resource-group {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out; /* 平滑过渡 */
+  padding-bottom: 20%;
+}
+
+#free-resources free-resource-group.collapsed {
+  max-height: 200px; /* 折叠时的最大高度 */
+}
+/* Project Image */
+#free-resources .free-resource .free-resource-link {
+  display: block;
+  margin: auto 0;
+  color: #252934;
+  margin: 2rem;
+  max-width: 10vw;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #fafafa;
+  box-shadow: 0 20px 10px -10px #25293450;
+  transition: 300ms;
+  width: 50%;
+  transform: translateX(10%);
+}
+
+#free-resources .free-resource .free-resource-link:hover {
+  box-shadow: 0 50px 15px -30px #25293450;
+}
+
+#free-resources .free-resource .free-resource-link:hover > img {
+  filter: saturate(1);
+  transform: scale(1.25);
+}
+
+#free-resources .free-resource .free-resource-image {
+  transform: scale(1.2);
+  width: 100%;
+  filter: saturate(0);
+  transition: all 300ms;
+}
+
+/* Project Details */
+#free-resources .free-resource .free-resource-details {
+  margin: auto 0;
+}
+
+#free-resources .free-resource-details .free-resource-tile {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #f300b4;
+}
+
+/* Icons */
+#free-resources .free-resource-details .icons {
+  margin: 0;
+  color: #252934;
+}
+
+#free-resources .free-resource-details .icons i {
+  margin-right: .4rem;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+
+/* Text */
+#free-resources .free-resource-details small {
+  font-style: italic;
+}
+
+#free-resources .free-resource-details p {
+  margin: 1rem 0;
+}
+
+/* Buttons */
+#free-resources .free-resource-details .buttons {
+  display: none;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#free-resources .free-resource-details .buttons a {
+  width: 49%;
+  padding: .5rem;
+  border: none;
+  border-bottom: 1px solid #f300b4;
+  color: #252934;
+  background: #fafafa;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#free-resources .free-resource-details .buttons a:hover {
+  background: #f300b4;
+  color: #fafafa;
+}
+#free-resources .free-resource-details .buttons i {
+  font-size: .8rem;
+  vertical-align: middle;
+  margin-left: .5rem;;
+}
+
+
+@media only screen and (max-width: 1149px) {
+  #free-resources .free-resource {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+@media only screen and (max-width: 949px) {
+  #free-resources .free-resource {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #free-resources .free-resource-columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  #free-resources .free-resource .free-resource-link {
+    max-width: 60vw;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #free-resources {
+    padding: 6rem 2rem 6rem;
+  }
+  
+  #free-resources .free-resource-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  #free-resources .heading .title {
+    font-size: 2rem;
+  }
+  
+  #free-resources .free-resource {
+    width: 100%;
+  }
+}

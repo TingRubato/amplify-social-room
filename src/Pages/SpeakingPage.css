@@ -1,0 +1,174 @@
+#speaking {
+  height: 100%;
+  min-height: 100vh;
+  font-size: 1.4rem;
+  position: relative;
+  z-index: 1;
+  background: #fafafa url(../assets/Images/Author_BG.png) center right no-repeat;
+  background-attachment: fixed;
+  --primary-inv: #333;
+}
+
+#speaking .wrapper {
+  padding: 10rem 5rem;
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+#speaking article {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  padding: 3rem 0;
+}
+
+#speaking .title {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+#speaking .title h3 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#speaking .title h4 {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+#speaking .title ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+
+#speaking .separator {
+  background: #f300b4;
+  width: 100px;
+  align-self: center;
+  height: 2px;
+  margin: 1rem 0;
+  animation: pulse-grow 20s infinite ease-in-out;
+}
+
+@keyframes pulse-grow {
+  0%, 100% {
+    width: 100px;
+  }
+  50% {
+    width: 45vw;
+  }
+}
+
+#speaking .subtitle {
+  font-size: 1.4rem;
+  text-align: center;
+  color: inherit;
+  padding-bottom: 1rem;
+}
+
+#speaking p {
+  padding-bottom: 1rem;
+  color: #555;
+  line-height: 1.6rem;
+  text-align: left;
+}
+#speaking li{
+  list-style: circle;
+  padding-bottom: 1rem;
+  color: #555;
+  line-height: 1.6rem;
+  text-align: left;
+  margin-left: 2rem;
+}
+
+
+#speaking .desc.full {
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+#speaking .desc {
+  background: #ffffffaa;
+  padding: 1.5rem;
+  text-align: justify;
+}
+
+#speaking .book-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+#speaking .hyperlink {
+  text-decoration: underline;
+  color: var(--primary-inv);
+  transition: color 0.3s ease-in-out;
+  font-size: 2rem;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  margin: 0.5rem;
+  overflow: hidden;
+}
+
+#speaking img {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+  height: auto;
+  border-radius: 5px;
+  padding-bottom: 10rem;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1149px) {
+  #speaking .wrapper {
+    padding: 8rem 3rem;
+    padding-bottom: 2vh;
+  }
+}
+
+@media only screen and (max-width: 949px) {
+  #speaking {
+    background-position: top left;
+    background-size: cover;
+  }
+
+  #speaking .title h3 {
+    font-size: 1.8rem;
+  }
+
+  #speaking .hyperlink {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 649px) {
+  #speaking .wrapper {
+    padding: 5rem 1.5rem;
+  }
+
+  #speaking .title h3 {
+    font-size: 1.6rem;
+  }
+
+  #speaking .title ul {
+    margin: 1rem;
+  }
+
+  #speaking img {
+    width: 100%;
+  }
+}

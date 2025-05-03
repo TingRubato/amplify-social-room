@@ -1,33 +1,31 @@
-import { useState } from 'react'
-import './App.css'
-import { ControlPanel } from './ControlPanel'
-import { CursorPanel } from './CursorPanel'
-import { defaultRoom, generateRandomEmoji } from './utils'
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom"; // 移除 BrowserRouter 导入
+import Home from "./Pages/Home";
+import Menu from "./Components/Menu/Menu";
+import SpeakingPage from "./Pages/SpeakingPage";
+import Nav from "./Components/Nav/Nav";
+import UpsellPage from "./Pages/UpsellPage";
+import BookPage from "./Pages/BookPage";
 
 function App() {
-  const [username, setUsername] = useState<string>(generateRandomEmoji())
-  const [currentRoomId, setCurrentRoomId] = useState<string>(defaultRoom.id)
-  
+  const [showMenu, setShowMenu] = useState(""); // 控制菜单显示状态
+
+  const toggleMenu = () => {
+    setShowMenu(showMenu === "active" ? "" : "active");
+  };
+
   return (
-    <>
-      <div className='cursor-panel'>
-        <div className='info-panel'>
-          <span>
-            Move cursor around to broadcast cursor position to others in the room.
-            <br />
-            Built with <a href="https://docs.amplify.aws/gen2">AWS Amplify Gen 2</a>.
-          </span>
-        </div>
-        <CursorPanel myUsername={username} currentRoomId={currentRoomId} />
-      </div>
-      <ControlPanel
-        currentRoomId={currentRoomId}
-        username={username}
-        onRoomChange={setCurrentRoomId}
-        onUsernameChange={() => setUsername(generateRandomEmoji())}
-      />
-    </>
-  )
+    <main>
+      <Nav showMenu={showMenu} toggleMenu={toggleMenu} />
+      <Menu showMenu={showMenu} toggleMenu={toggleMenu} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/speakings" element={<SpeakingPage />} />
+        <Route path="/upsell" element={<UpsellPage />} />
+        <Route path="/book" element={<BookPage />} />
+      </Routes>
+    </main>
+  );
 }
 
-export default App
+export default App;

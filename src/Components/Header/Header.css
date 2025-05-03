@@ -1,0 +1,372 @@
+/* Base Variables */
+:root {
+  --silhouette-to-bg-position: 10%;
+  --text-to-right: 28.5%;
+  --moon-to-position: 85%;
+  --moon-to-transform: translate(-15%);
+  --moon-animation-duration: 1.2s;
+  --moon-animation-delay: 1s;
+  --contrast: 120%;
+  background-color: black;
+}
+
+/* Header */
+#welcome-section {
+  background-image: linear-gradient(to bottom, #181d23 0%, #202736 80%);
+  background-attachment: scroll;
+  position: relative;
+  min-height: 100vh;
+  animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: center top;
+  }
+  100% {
+    background-position: center bottom;
+  }
+}
+
+#welcome-section::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  animation: stars-move-in 1000ms 300ms forwards;
+}
+
+@keyframes stars-move-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.forest {
+  position: relative;
+  /* bottom: -50vh; */
+  background: url(../../assets/Images/bg-f.png) bottom left repeat-x;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  opacity: 1;
+  animation: forest-move-in 1000ms 500ms forwards;
+}
+
+@keyframes forest-move-in {
+  from {
+    background-position-y: 150%;
+  }
+  to {
+    background-position-y: 0%;
+    opacity: 1;
+  }
+}
+
+.silhouette {
+  position: absolute;
+  background: url(../../assets/Images/evonne-figure-purple.png) bottom left no-repeat;
+  background-size: 40%;
+  bottom: 0;
+  height: 95%;
+  z-index: 20;
+  opacity: 0;
+  animation: silhouette-move-in 1000ms 800ms forwards;
+}
+
+@keyframes silhouette-move-in {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    opacity: 1;
+    background-position-x: var(--silhouette-to-bg-position);
+    width: 60%;
+  }
+}
+
+/* 优化 .moon 部分 */
+.moon {
+  position: absolute;
+  bottom: 30%;
+  right: 15vw;
+  width: 85%;
+  height: 85%;
+  background: url(../../assets/Images/book-cover.png) 25% 20% no-repeat;
+  background-size: 11%;
+  z-index: 20;
+  opacity: 0;
+  animation: moon-move-in var(--moon-animation-duration) var(--moon-animation-delay) forwards;
+}
+
+@keyframes moon-move-in {
+  from {
+    opacity: 0;
+    transform: translateY(20%) translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    scale: 1.5;
+    /* transform: translateY(0) translateX(-100%); */
+    background-position: var(--moon-to-position);
+  }
+}
+
+#welcome-section .container-star {
+  align-items: center;
+  background-image: radial-gradient(
+    1600px at 70% 120%,
+    rgba(33, 39, 80, 1) 10%,
+    #020409 100%
+  );
+  z-index: 30;
+}
+
+#welcome-section .container-star content {
+  
+}
+
+#welcome-section .container-star .content #backgroundCanvas {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  overflow: hidden;
+  z-index: 1;
+  background: radial-gradient(#100826, #060212);
+}
+
+#welcome-section .container-star .content #starsCanvas {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  overflow: hidden;
+  z-index: 2;
+  background-color: transparent;
+}
+
+#welcome-section .container-star .content #milkyWayCanvas {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  object-fit: contain;
+  overflow: hidden;
+  z-index: 1;
+  filter: blur(0px);
+}
+
+#welcome-section .container-star .content #scene {
+  /* max-height: 80vh; */
+  display: none;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#welcome-section .container-star .footerContent {
+  position: absolute;
+  font-family: sans-serif;
+  color: rgba(200, 220, 255, 0.3);
+  text-align: center;
+  z-index: 30;
+}
+
+#welcome-section .container-star footer {
+  height: 100px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Copy and CTA */
+#welcome-section .container {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  width: 60vw;
+  opacity: 0;
+  transform: translate(0, -50%);
+  animation: text-fade-in 1000ms 800ms forwards;
+  align-items: flex-end;
+  z-index: 1003;
+}
+
+@keyframes text-fade-in {
+  from {
+    right: 0;
+  }
+  to {
+    opacity: 1;
+    right: var(--text-to-right);
+  }
+}
+
+#welcome-section .container-star .container {
+  width: 100vw;
+}
+#welcome-section .container-star .container h1 {
+  font-size: 2rem;
+  /* font-style: italic; */
+  color: #fafafa;
+}
+
+#welcome-section .container-star .container h2,
+#welcome-section .container-star .container h3 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-style: italic;
+  color: #fafafa;
+}
+
+#welcome-section .container-star .container .buttons {
+  display: grid;
+  justify-items: center;
+  align-items: stretch;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 2rem;
+  gap: 4rem
+
+}
+
+#welcome-section .container-star .container .buttons a {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #fafafa;
+  color: #fafafa;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  z-index: 1002; /* Increased z-index */
+  position: relative; /* Added position relative */
+  cursor: pointer; /* Added cursor pointer */
+}
+
+#welcome-section .container-star .container .buttons a:hover {
+  border: 1px solid #00b1b2;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 100px -20px #00b1b2;
+}
+
+#welcome-section .container-star .container .buttons a.cta {
+  background: #00b1b2;
+  border: 1px solid transparent;
+  font-weight: bold;
+}
+
+#welcome-section .container-star .container .buttons a.cta:hover {
+  /* background: transparent; */
+  border: 1px solid #00b1b2;
+}
+
+/* Responsive Breakpoints */
+@media only screen and (max-width: 768px) {
+  #welcome-section .container-star .container h1 {
+    font-size: 1.8rem; /* Reduced font size for better readability */
+  }
+  #welcome-section .container-star .container h2,
+  #welcome-section .container-star .container h3 {
+    font-size: 1.5rem; /* Adjusted font size */
+    font-weight: normal; /* Kept normal weight */
+    
+
+  }
+  #welcome-section .container-star .container .buttons {
+    align-items: center;
+    position:relative;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 56%;
+    left: 20%;
+    align-content: right;
+  }
+  #welcome-section .container-star .container .buttons a {
+    padding: 0.75rem;
+    width: 100%;
+    border: 1px solid #fafafa;
+    color: #fafafa;
+    text-align: center;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    font-weight: normal;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    z-index: 1003; /* Increased z-index */
+    position: relative; /* Added position relative */
+  }
+
+  .silhouette {
+    background-size: min(50%, 300px);
+    /* transform: translateY(5%); */
+  }
+  
+  .moon {
+    background-size: 20%;
+    right: 25vw; /* Adjust position for better visibility */
+    bottom: 35vh; /* Move slightly higher on small screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #welcome-section .container-star .container {
+    top: 50%;
+    left: 20%;
+    width: 75vw;  }
+  #welcome-section .container-star .container h1 {
+    font-size: 1.5rem; /* Further reduced font size */
+font-weight: lighter;  }
+  #welcome-section .container-star .container h2,
+  #welcome-section .container-star .container h3 {
+    font-size: 1rem; /* Adjusted font size */
+    font-weight: normal; /* Kept normal weight */
+  }
+  #welcome-section .container .buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+  .silhouette {
+    background-size: 70%;
+    padding-bottom: 20vh;
+  }
+  .moon {
+    background-size: 30%;
+    right: 20vw; /* Adjust position for better visibility */
+    top:-20vh; /* Move slightly higher on small screens */}
+}
+
+@media only screen and (max-width: 360px) {
+  #welcome-section .container-star {
+    top: 50%;
+    width: 90%;
+    transform: translate(50%, -10%);
+  }
+  #welcome-section .container-star h1 {
+    font-size: 1.2rem; /* Reduced font size for very small screens */
+    font-weight: bold; /* Retained emphasis */
+  }
+  #welcome-section .container-star h2,
+  #welcome-section .container h3 {
+    font-size: 1rem; /* Adjusted font size */
+    font-weight: normal; /* Kept normal weight */
+  }
+  #welcome-section .container-star .container .buttons {
+    /* flex-direction: column; */
+    /* align-items: flex-end; */
+    width: 50%;
+  }
+  .silhouette {
+    background-size: 60%;
+  }
+  .moon {
+    background-size: 40%;
+  }
+}

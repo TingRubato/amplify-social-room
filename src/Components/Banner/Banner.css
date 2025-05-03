@@ -1,0 +1,408 @@
+/* Import Fonts */
+#banner {
+  --grid-gap: 1rem;
+  --color-text-primary: #18191a;
+  /* --paper-bg: #fff; */
+  --paper-border: 1px solid rgba(0, 0, 0, 0.2);
+  --circle-1: #CC99EE;
+  --circle-2: #00b1b2;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#banner  {
+  background-color: #f5f5f0;
+  width: 100vw;
+  min-height: 60vh;
+  overflow-x: hidden;
+  position: relative;
+  /* font-family: var(--primary-font); */
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+/* Background noise effect */
+#banner body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: #f5f5f0 url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  background-size: 300px 300px;
+  animation: noise-animation 0.3s steps(5) infinite;
+  opacity: 0.3;
+  will-change: transform;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes noise-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-2%, -3%);
+  }
+
+  20% {
+    transform: translate(-4%, 2%);
+  }
+
+  30% {
+    transform: translate(2%, -4%);
+  }
+
+  40% {
+    transform: translate(-2%, 5%);
+  }
+
+  50% {
+    transform: translate(-4%, 2%);
+  }
+
+  60% {
+    transform: translate(3%, 0);
+  }
+
+  70% {
+    transform: translate(0, 3%);
+  }
+
+  80% {
+    transform: translate(-3%, 0);
+  }
+
+  90% {
+    transform: translate(2%, 2%);
+  }
+
+  100% {
+    transform: translate(1%, 0);
+  }
+}
+
+/* 12-Column Grid Container: full width with 2rem padding and 1rem gutter */
+#banner .container {
+  /* width: 100vw; */
+  min-height: 60vh;
+  padding: 10rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: var(--grid-gap);
+  grid-template-rows: auto 1fr auto;
+  /* Top bar, main content, bottom */
+  position: relative;
+}
+
+/* Top Bar */
+#banner .top-left {
+  grid-column: 1/-1;
+  grid-row: 1;
+  align-self: left;
+}
+
+#banner .top-left h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  padding: auto;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+#banner .top-right {
+  grid-column: 5 / 13;
+  grid-row: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: auto;
+  gap: 4px;
+}
+
+#banner .top-right .circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+#banner .circle.circle1 {
+  background: var(--circle-1);
+}
+
+#banner .circle.circle2 {
+  background: var(--circle-2);
+  margin-left: -4px;
+}
+
+/* Main Content: Three columns: Left text, Books, Right text */
+#banner .main-content {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+  grid-gap: var(--grid-gap);
+  align-items: center;
+}
+
+#banner .left-text,
+#banner .right-text {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+}
+
+#banner .left-text {
+  text-align: left;
+}
+
+#banner .right-text {
+  text-align: right;
+}
+
+#banner .left-text h2,
+#banner .right-text h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+  font-weight: 400;
+  z-index: 2;
+}
+
+#banner .left-text p,
+#banner .right-text p {
+  font-size: 1rem;
+  line-height: 1.4;
+  z-index: 2;
+}
+
+#banner span {
+  font-family: var(--secondary-font);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Books Section (center column) */
+#banner .books-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Book Item Styles */
+#banner .books__item {
+  text-align: center;
+  cursor: default;
+}
+
+#banner .books__container {
+  position: relative;
+  width: 220px;
+  margin: 0 auto;
+}
+
+#banner .books__cover {
+  position: relative;
+  will-change: transform;
+}
+
+#banner .books__hitbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Back Cover: 96% with 2% margin */
+#banner .books__back-cover {
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  top: 2%;
+  left: 2%;
+  background: var(--backcover-bg);
+  border-radius: 0 6px 6px 0;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  z-index: -10;
+}
+
+/* Paper Container: 90% with equal top/bottom margin */
+#banner .books__inside {
+  position: absolute;
+  width: 90%;
+  height: 94%;
+  top: 3%;
+  left: 5%;
+  z-index: 0;
+}
+
+/* Paper Pages: height is 100% */
+#banner .books__page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 98%;
+  height: 100%;
+  background: var(--paper-bg);
+  border: var(--paper-border);
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transform-origin: right center;
+  z-index: -5;
+}
+
+/* Initial stacking: pages start at 0 offset (fully stacked) */
+#banner .books__page:nth-child(1) {
+  transform: translateX(0px);
+}
+
+#banner .books__page:nth-child(2) {
+  transform: translateX(0px);
+}
+
+#banner .books__page:nth-child(3) {
+  transform: translateX(0px);
+}
+
+/* Front Cover Image */
+#banner .books__image {
+  line-height: 0;
+  position: relative;
+  border-radius: 2px 6px 6px 2px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 30px 45px rgba(0, 0, 0, 0.12),
+    0 60px 80px rgba(0, 0, 0, 0.1);
+  transform: perspective(2000px) rotateY(0deg) translateX(0px) scaleX(1);
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  cursor: pointer;
+  will-change: transform;
+  z-index: 10;
+}
+
+#banner .books__image img {
+  width: 100%;
+  border-radius: 2px 6px 6px 2px;
+}
+
+#banner .books__effect {
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  margin-left: 16px;
+  top: 0;
+  border-left: 2px solid #00000010;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform-origin: left center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#banner .books__light {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 2px 6px 6px 2px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.15;
+  transform-origin: left center;
+  z-index: 4;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+#banner .books__title {
+  margin-top: 0.75rem;
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  z-index: 2;
+}
+
+/* Bottom Center: Coordinates */
+#banner .bottom-center {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  text-align: center;
+  font-size: rem;
+  margin-top: 2rem;
+  color: var(--color-text-primary);
+}
+
+@media screen and (max-width: 1200px) {
+  #banner .container {
+    padding: 8rem 0 2rem;
+  }
+  
+  #banner .books-wrapper {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #banner .container {
+    padding: 8rem;
+  }
+  
+  #banner .books__container {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #banner .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  #banner .left-text,
+  #banner .right-text {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  #banner .books-wrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  #banner .top-left h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #banner .container {
+    padding: 2rem;
+  }
+
+  #banner .top-left,
+  #banner .top-right {
+    text-align: center;
+  }
+
+  #banner .top-right {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
