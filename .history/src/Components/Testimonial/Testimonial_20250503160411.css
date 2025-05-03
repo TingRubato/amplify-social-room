@@ -5,16 +5,16 @@
     z-index: 1;
     /* padding: 4rem 12rem 4rem 12rem; */
     font-size: x-large;
-    min-height: 60vh;
+    /* padding-bottom: 50px; */
 }
-#testimonial .h2 title {
+#testimonial .h2 {
     /* padding: auto; */
     font-size: 2.5rem;
     font-weight: 700;
     color: #252934;
     text-align: center;
-    padding-inline-start: 20%;
-    margin-bottom: 2rem; /* Added margin-bottom */
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 
 #testimonial .tabs-controls {
@@ -79,7 +79,7 @@
     height: 400px;
     background-color: #99cdd0;
     background-image: url("../../assets/Images/Asset 1Evonne-Logo.png");
-    background-size: clamp(80px, 20vw, 200px);
+    background-size: 200px;
     background-repeat: no-repeat;
     background-position: 5% calc(100% - 20px);
     border: 1px solid #006699;
@@ -183,7 +183,7 @@
 @media (max-width: 1024px) {
     .cards-container {
         width: 100%;
-        /* height: auto; */
+        height: auto;
     }
 
     .card {
