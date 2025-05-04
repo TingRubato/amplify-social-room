@@ -7,14 +7,11 @@
     font-size: x-large;
     min-height: 60vh;
 }
-#testimonial .h2 title {
-    /* padding: auto; */
-    font-size: 2.5rem;
-    font-weight: 700;
+
+#testimonial h2 {
+    margin: 0 auto;
     color: #252934;
     text-align: center;
-    padding-inline-start: 20%;
-    margin-bottom: 2rem; /* Added margin-bottom */
 }
 
 #testimonial .tabs-controls {
@@ -184,11 +181,6 @@
     .cards-container {
         width: 100%;
         /* height: auto; */
-    }
-
-    .card {
-        width: 80%;
-        height: auto;
     }
 
     .card h1 {

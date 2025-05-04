@@ -19,9 +19,6 @@
   background: url("../../assets/Images/Author_BG.png") center no-repeat;
 }
 
-/* 
-  The first inner container: .clients 
-*/
 #clients .clients {
   /* Additional styling if needed */
   z-index: 1;

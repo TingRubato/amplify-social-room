@@ -1,12 +1,14 @@
 #book {
     min-height: 50vh;
     font-size: 1.4rem;
+    padding: 4rem 8% 4rem 12%;
     position: relative;
     background: linear-gradient(215deg, #f0f0f0 0%,#fafafa 100%);
-    /* margin-top: -10rem; */
     z-index: 1;
-    /* padding: 4rem 12rem 4rem 12rem; */
-    font-size: x-large;}
+    align-items: center;
+    justify-content: center;
+    max-height: fit-content;
+  }
   
   #book a,
   #book a:visited {

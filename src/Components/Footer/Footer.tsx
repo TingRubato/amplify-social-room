@@ -4,7 +4,6 @@ import './Footer.css';
 // import FooterIMG from "../../assets/Images/evonne-weinhaus-fast-solutiuons.png";
 
 interface FooterProps {
-  // Add any props if needed
 }
 
 const Footer: React.FC<FooterProps> = () => {

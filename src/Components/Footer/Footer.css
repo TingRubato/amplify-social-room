@@ -14,7 +14,6 @@ footer .wrapper {
   align-items: center;
   /* justify-content: space-between; */
   z-index: 1;
-  background-color: #ffffff;
 }
 
 @media only screen and (max-width: 1024px) {

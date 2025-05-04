@@ -37,7 +37,6 @@ const Preview: FC = () => {
 								<li></li>
 							</ul>
 							<figcaption>		
-
 								<h1>Stop Struggling with Your Teen</h1>
 								<span>By Evonne Weinhaus</span>
 								<a href="#" className="p">Get it now on Amazon</a>

@@ -806,5 +806,6 @@ figcaption p {
 	figcaption {
 		width: 100%;
 		font-size: 80%;
+		display: none;
 	}
 }

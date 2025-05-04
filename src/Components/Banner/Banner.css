@@ -7,7 +7,7 @@
   --circle-1: #CC99EE;
   --circle-2: #00b1b2;
   margin: 0;
-  padding: 0;
+  padding: 2rem;
   box-sizing: border-box;
 }
 
@@ -106,7 +106,7 @@
 }
 
 #banner .top-left h2 {
-  font-size: 3rem;
+  /* font-size: 3rem; */
   line-height: 1.2;
   padding: auto;
   font-weight: 400;
@@ -353,6 +353,7 @@
 @media screen and (max-width: 1200px) {
   #banner .container {
     padding: 8rem 0 2rem;
+    margin-bottom: 2rem;
   }
   
   #banner .books-wrapper {
