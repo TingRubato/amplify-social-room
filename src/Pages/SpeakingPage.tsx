@@ -235,7 +235,7 @@ const SpeakingsPage:React.FC = () => (
       </div>
       </div>
 
-      <img src={BannerImg} alt="Banner" />
+      <img src={BannerImg} alt="Banner" loading="lazy" />
 
     </section>
   </>

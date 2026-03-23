@@ -25,7 +25,7 @@ const FreeResource: React.FC<FreeResourceProps> = props => {
   return (
     <div className="free-resource">
       <a className="free-resource-link" href={link} target="_blank" rel="noopener noreferrer">
-        <img className="free-resource-image" src={props.img} alt={'Screenshot of ' + props.title} />
+        <img className="free-resource-image" src={props.img} alt={'Screenshot of ' + props.title} loading="lazy" />
       </a>
       <div className="free-resource-details">
         <div className="free-resource-tile">

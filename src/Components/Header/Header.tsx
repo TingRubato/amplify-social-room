@@ -1,8 +1,20 @@
 import React, { useEffect } from "react";
 import "./Header.css";
+import evonneFigure from "../../assets/Images/evonne-figure-purple.png";
+import bookCover from "../../assets/Images/book-cover.png";
 
 const Header: React.FC = () => {
   useEffect(() => {
+    // Preload critical header background images for faster LCP
+    const preloadImages = [evonneFigure, bookCover];
+    preloadImages.forEach((src) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = src;
+      document.head.appendChild(link);
+    });
+
     const dpr = window.devicePixelRatio || 1;
 
     // getting canvases with native resolution

@@ -72,14 +72,14 @@ const Client:React.FC<ClientProps> = () => {
    <div className="marquee__group">
      {logos.map((logo, index) => (
        <div className="marquee__item" key={`normal1-${index}`}>
-         <img src={logo.src} alt={logo.alt} />
+         <img src={logo.src} alt={logo.alt} loading="lazy" />
        </div>
      ))}
    </div>
    <div className="marquee__group" aria-hidden="true">
      {logos.map((logo, index) => (
        <div className="marquee__item" key={`normal2-${index}`}>
-         <img src={logo.src} alt={logo.alt} />
+         <img src={logo.src} alt={logo.alt} loading="lazy" />
        </div>
      ))}
    </div>
@@ -88,14 +88,14 @@ const Client:React.FC<ClientProps> = () => {
    <div className="marquee__group">
      {logos.map((logo, index) => (
        <div className="marquee__item" key={`reverse1-${index}`}>
-         <img src={logo.src} alt={logo.alt} />
+         <img src={logo.src} alt={logo.alt} loading="lazy" />
        </div>
      ))}
    </div>
    <div className="marquee__group" aria-hidden="true">
      {logos.map((logo, index) => (
        <div className="marquee__item" key={`reverse2-${index}`}>
-         <img src={logo.src} alt={logo.alt} />
+         <img src={logo.src} alt={logo.alt} loading="lazy" />
        </div>
      ))}
    </div>
