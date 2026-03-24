@@ -101,7 +101,7 @@
 }
 
 
-@media only screen and (max-width: 1149px) {
+@media only screen and (max-width: 1024px) {
   #about .wrapper {
     padding: 5rem 2rem 8rem;
   }
@@ -116,17 +116,36 @@
   #about .desc {
     grid-column-end: 3;
   }
-}
-@media only screen and (max-width: 949px) {
+
   #about {
-    /* clip-path: polygon(0 0, 20% 2%, 100% 0, 100% 100%, 80% 98%, 0 100%); */
     background-position: top left;
     background-size: 50%;
-    }
   }
-@media only screen and (max-width: 649px) {
+}
+
+@media only screen and (max-width: 768px) {
   #about .wrapper {
-    padding: 1rem;
+    padding: 2rem 1rem;
+  }
+  
+  #about article {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  #about .desc .full {
+    width: 100%;
+  }
+  
+  #about .desc .book-cover {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  #about {
+    background-size: 80%;
   }
 }
 

@@ -374,7 +374,7 @@ const Header: React.FC = () => {
         <h3>A complete and easy-to-use guide from Evonne Weinhaus</h3>
         <div className="buttons">
           <a href="#about">About</a>
-          <a href="https://learning.evonneweinhaus.com" className="cta">
+          <a href="https://course.evonneweinhaus.com" className="cta">
             Learn
           </a>
         </div>

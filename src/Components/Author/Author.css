@@ -130,10 +130,6 @@
 }
 
 
-#author .desc {
-  /* grid-column-end: span 2; */
-  /* padding: 2rem; */
-}
 
 #author .book-cover {
   width: 100%;
@@ -157,68 +153,46 @@
   overflow: hidden;
 }
 
-/* /* Breakpoints */
-@media only screen and (max-width: 1149px) {
+/* Breakpoints */
+@media only screen and (max-width: 1024px) {
   #author article {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr;
     grid-gap: 0;
   }
+  
   #author .desc.full {
-    grid-column-end: span 4;
+    grid-column-end: -1;
     margin-bottom: 2rem;
   }
       
-    #author .desc {
-      grid-column-end: span 2;
-      padding: 2rem;
-      text-align: justify;
-    }
-    
-    @media only screen and (max-width: 1149px) {
-      #author article {
-        grid-template-columns: 1fr;
-        grid-gap: 0;
-      }
+  #author .desc {
+    grid-column-end: -1;
+    padding: 2rem;
+    text-align: justify;
+  }
 
-      #author img {
-        left: var(--text-to-right);
-      }
-      
-      #author .desc.full {
-        grid-column-end: -1;
-      }
+  #author img {
+    left: var(--text-to-right);
+  }
 
-      #author .wrapper .author-content {
-        padding: 2rem 4rem 2rem 4rem;
-      } 
-    
-      #author .desc {
-        grid-column-end: -1;
-      }
-    }
-    @media only screen and (max-width: 949px) {
- 
-      #author {
-        /* clip-path: polygon(0 0, 20% 2%, 100% 0, 100% 100%, 80% 98%, 0 100%); */
-        background-position: top left;
-        background-size: cover;
-      }
-      #author img {
-        left: 5%;
-      }
-       
-      #author .wrapper .author-content {
-        padding: 2rem 4rem 2rem 4rem;
-      } 
-    }
-    @media only screen and (max-width: 649px) {
-      #author .wrapper .author-content {
-        padding: 2rem 1rem 2rem 1rem;
-        flex-direction: column;
-      }
-      #author img {
-        top: -4%;
-        left: 3%;
-      }
-    }
+  #author .wrapper .author-content {
+    padding: 2rem 4rem 2rem 4rem;
+  } 
+}
+
+@media only screen and (max-width: 768px) {
+  #author {
+    background-position: top left;
+    background-size: cover;
+  }
+  
+  #author img {
+    left: 5%;
+    top: -4%;
+  }
+   
+  #author .wrapper .author-content {
+    padding: 2rem 1rem 2rem 1rem;
+    flex-direction: column;
+  } 
 }

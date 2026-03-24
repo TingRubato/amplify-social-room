@@ -152,3 +152,36 @@
     vertical-align: middle;
     margin-left: .5rem;;
   }
+
+/* Breakpoints */
+@media screen and (max-width: 1024px) {
+  #book .project {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #book {
+    padding: 2rem 5%;
+  }
+  
+  #book .project {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  #book .heading .title {
+    font-size: 1.6rem;
+  }
+  
+  #book .project-details .buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  #book .project-details .buttons a {
+    width: 100%;
+  }
+}

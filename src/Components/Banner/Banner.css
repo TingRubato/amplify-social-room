@@ -350,22 +350,16 @@
   color: var(--color-text-primary);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1024px) {
   #banner .container {
-    padding: 8rem 0 2rem;
+    padding: 6rem 2rem;
     margin-bottom: 2rem;
   }
   
   #banner .books-wrapper {
     gap: 2rem;
   }
-}
 
-@media screen and (max-width: 1024px) {
-  #banner .container {
-    padding: 8rem;
-  }
-  
   #banner .books__container {
     width: 180px;
   }
