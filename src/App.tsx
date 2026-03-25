@@ -6,6 +6,7 @@ import SpeakingPage from "./Pages/SpeakingPage";
 import Nav from "./Components/Nav/Nav";
 import UpsellPage from "./Pages/UpsellPage";
 import BookPage from "./Pages/BookPage";
+import PromoWidget from "./Components/PromoWidget/PromoWidget";
 
 function App() {
   const [showMenu, setShowMenu] = useState(""); // 控制菜单显示状态
@@ -24,6 +25,7 @@ function App() {
         <Route path="/upsell" element={<UpsellPage />} />
         <Route path="/book" element={<BookPage />} />
       </Routes>
+      <PromoWidget />
     </main>
   );
 }

@@ -58,9 +58,9 @@ a {
 	text-transform: uppercase;
 	border: 2px solid #2c3e50;
 	margin-top: 100px; 
-	font-size: 0.7em;
+	font-size: 0.95em;
 	font-weight: 700;
-	padding: 0.1em 0.4em;
+	padding: 0.25em 0.55em;
 	text-align: center;
 	-webkit-transition: color 0.3s, border-color 0.3s;
 	-moz-transition: color 0.3s, border-color 0.3s;
@@ -693,19 +693,28 @@ figcaption {
 	position: relative;
 	padding-left: 90px;
 	text-align: center;
-	font-size: large;
+	font-size: 1rem;
 	left: 256px;
 	width: 704px;
 }
 
 figcaption h1 {
 	margin: 0;
+	font-size: clamp(1.7rem, 2.5vw + 1rem, 2.6rem);
+	line-height: 1.2;
 }
 
 figcaption span {
 	color: #16a085;
 	padding: 0.6em 0 1em 0;
 	display: block;
+	font-size: clamp(1.15rem, 1.2vw + 1rem, 1.45rem);
+}
+
+figcaption .p {
+	font-size: clamp(1rem, 1vw + 0.9rem, 1.35rem);
+	display: inline-block;
+	margin-top: 0.25em;
 }
 
 figcaption p {
@@ -743,12 +752,12 @@ figcaption p {
 @media screen and (max-width: 768px) {
 	#preview {
 		padding-top: 5vh;
-		font-size: 1.2rem;
+		font-size: 1.55rem;
 	}
 
 	#preview .heading .title {
-		font-size: 2rem;
-		line-height: 2rem;
+		font-size: 2.2rem;
+		line-height: 1.15;
 	}
 
 	#preview .heading .subtitle {
@@ -772,7 +781,8 @@ figcaption p {
 		width: 100%;
 		left: 0;
 		padding-left: 0;
-		font-size: 90%;
+		padding-top: 1.5rem;
+		font-size: 1rem;
 	}
 }
 
@@ -780,12 +790,12 @@ figcaption p {
 @media screen and (max-width: 480px) {
 	#preview {
 		padding-top: 3vh;
-		font-size: 1rem;
+		font-size: 1.5rem;
 	}
 
 	#preview .heading .title {
-		font-size: 1.8rem;
-		line-height: 1.8rem;
+		font-size: 2rem;
+		line-height: 1.15;
 	}
 
 	#preview .heading .subtitle {
@@ -805,7 +815,12 @@ figcaption p {
 
 	figcaption {
 		width: 100%;
-		font-size: 80%;
-		display: none;
+		left: 0;
+		padding-left: 0;
+		padding-top: 1.25rem;
+		position: relative;
+		font-size: 1rem;
+		display: block;
+		text-align: center;
 	}
 }

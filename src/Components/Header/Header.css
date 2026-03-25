@@ -2,6 +2,7 @@
 :root {
   --silhouette-to-bg-position: 10%;
   --text-to-right: 28.5%;
+  --hero-copy-max-width: 72rem;
   --moon-to-position: 85%;
   --moon-to-transform: translate(-15%);
   --moon-animation-duration: 1.2s;
@@ -187,10 +188,13 @@
 #welcome-section .container {
   position: absolute;
   top: 50%;
-  left: 30%;
-  width: 60vw;
+  left: 50%;
+  width: min(var(--hero-copy-max-width), calc(100vw - 2rem));
+  max-width: 100%;
+  padding: 0 1rem;
+  box-sizing: border-box;
   opacity: 0;
-  transform: translate(0, -50%);
+  transform: translate(-50%, -50%);
   animation: text-fade-in 1000ms 800ms forwards;
   align-items: flex-end;
   z-index: 1003;
@@ -198,19 +202,15 @@
 
 @keyframes text-fade-in {
   from {
-    right: 0;
+    opacity: 0;
   }
   to {
     opacity: 1;
-    right: var(--text-to-right);
   }
 }
 
-#welcome-section .container-star .container {
-  width: 100vw;
-}
 #welcome-section .container-star .container h1 {
-  font-size: 2rem;
+  font-size: clamp(1.7rem, 0.85rem + 2.8vw, 2.5rem);
   /* font-style: italic; */
   color: #fafafa;
 }
@@ -218,7 +218,7 @@
 #welcome-section .container-star .container h2,
 #welcome-section .container-star .container h3 {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 0.65rem + 2vw, 1.8rem);
   font-weight: normal;
   font-style: italic;
   color: #fafafa;
@@ -228,10 +228,9 @@
   display: grid;
   justify-items: center;
   align-items: stretch;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
   margin-top: 2rem;
-  gap: 4rem
-
+  gap: clamp(1.25rem, 3vw, 4rem);
 }
 
 #welcome-section .container-star .container .buttons a {
@@ -241,7 +240,7 @@
   color: #fafafa;
   text-align: center;
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.9rem + 0.35vw, 1.2rem);
   transition: all 0.4s ease;
   z-index: 1002; /* Increased z-index */
   position: relative; /* Added position relative */
@@ -267,17 +266,6 @@
 
 /* Responsive Breakpoints */
 @media only screen and (max-width: 1024px) {
-  #welcome-section .container-star .container {
-    width: 80vw;
-    left: 10%;
-  }
-  #welcome-section .container-star .container h1 {
-    font-size: 2.5rem;
-  }
-  #welcome-section .container-star .container h2,
-  #welcome-section .container-star .container h3 {
-    font-size: 1.8rem;
-  }
   .silhouette {
     background-size: min(45%, 400px);
   }
@@ -288,28 +276,6 @@
 }
 
 @media only screen and (max-width: 768px) {
-  #welcome-section .container-star .container h1 {
-    font-size: 2rem;
-  }
-  #welcome-section .container-star .container h2,
-  #welcome-section .container-star .container h3 {
-    font-size: 1.5rem;
-    font-weight: normal;
-  }
-  #welcome-section .container-star .container .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 2rem;
-  }
-  #welcome-section .container-star .container .buttons a {
-    padding: 1rem;
-    width: 100%;
-    font-size: 1.2rem;
-  }
   .silhouette {
     background-size: min(60%, 300px);
   }
@@ -321,21 +287,8 @@
 }
 
 @media only screen and (max-width: 480px) {
-  #welcome-section .container-star .container {
-    top: 50%;
-    left: 10%;
-    width: 80vw;
-  }
   #welcome-section .container-star .container h1 {
-    font-size: 1.7rem;
-    font-weight: lighter;
-  }
-  #welcome-section .container-star .container h2,
-  #welcome-section .container-star .container h3 {
-    font-size: 1.2rem;
-  }
-  #welcome-section .container-star .container .buttons {
-    width: 100%;
+    font-weight: 300;
   }
   .silhouette {
     background-size: 80%;

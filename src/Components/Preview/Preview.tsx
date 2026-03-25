@@ -1,7 +1,23 @@
-import { FC } from "react";
+import { FC, MouseEvent } from "react";
 import "./Preview.css";
+import parentTeenQuizPdf from "../../assets/parent-teen-quiz-evonne-weinhaus_0619.pdf";
 
 const Preview: FC = () => {
+	const handleDownloadClick = (event: MouseEvent<HTMLAnchorElement>) => {
+		event.preventDefault();
+
+		const downloadLink = document.createElement("a");
+		downloadLink.href = parentTeenQuizPdf;
+		downloadLink.download = "parent-teen-quiz-evonne-weinhaus_0619.pdf";
+		document.body.appendChild(downloadLink);
+		downloadLink.click();
+		document.body.removeChild(downloadLink);
+
+		window.setTimeout(() => {
+			window.location.href = "https://stopstruggling.evonneweinhaus.com";
+		}, 300);
+	};
+
   return (
 	<section id="preview">
 					<div className="heading">
@@ -22,7 +38,7 @@ const Preview: FC = () => {
 							<ul className='page'>
 								<li></li>
 								<li>
-									<a className="btn" href="/src/assets/stop-struggling-with-your-teen-excerpt-2.pdf" download>Download</a>
+									<a className="btn" href={parentTeenQuizPdf} download="parent-teen-quiz-evonne-weinhaus_0619.pdf" onClick={handleDownloadClick}>Download</a>
 								</li>
 								<li></li>
 								<li></li>

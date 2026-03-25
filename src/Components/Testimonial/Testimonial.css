@@ -10,8 +10,21 @@
 
 #testimonial h2 {
     margin: 0 auto;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.15rem;
+    position: relative;
+    z-index: 6;
     color: #252934;
     text-align: center;
+}
+
+#testimonial .separator {
+    background: #f300b4;
+    width: 150px;
+    height: 2px;
+    margin: 0 auto 2.25rem;
+    position: relative;
+    z-index: 6;
 }
 
 #testimonial .tabs-controls {
@@ -58,11 +71,14 @@
 #testimonial .cards-container {
     position: relative;
     z-index: 1;
-    padding-top: 3rem;
+    /* Room below title + separator; min height ≥ card (400px) so centering can’t pull card over heading */
+    padding-top: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(40vh);
+    /* Explicit height: abspos cards don’t expand the box; must be ≥ card so flex centering doesn’t overlap the title */
+    height: max(42vh, 420px);
+    min-height: max(42vh, 420px);
     margin: 0 auto;
     width: 90%;
 }
@@ -72,8 +88,10 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    width: 800px;
-    height: 400px;
+    width: min(800px, 92vw);
+    max-width: 800px;
+    height: min(400px, 52vh);
+    max-height: 400px;
     background-color: #99cdd0;
     background-image: url("../../assets/Images/Asset 1Evonne-Logo.png");
     background-size: clamp(80px, 20vw, 200px);

@@ -1,6 +1,6 @@
 #book {
     min-height: 50vh;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     padding: 4rem 8% 4rem 12%;
     position: relative;
     background: linear-gradient(215deg, #f0f0f0 0%,#fafafa 100%);
@@ -25,7 +25,7 @@
   }
   /* Heading */
   #book .heading .title {
-    font-size: 2rem;
+    font-size: 2.25rem;
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -39,7 +39,7 @@
   }
   
   #book .heading .subtitle {
-    font-size: 1.6rem;
+    font-size: 1.85rem;
     text-align: center;
     padding-bottom: 1.5rem;
   } 
@@ -173,7 +173,7 @@
   }
   
   #book .heading .title {
-    font-size: 1.6rem;
+    font-size: 1.85rem;
   }
   
   #book .project-details .buttons {

@@ -15,7 +15,9 @@
   background-color: #f5f5f0;
   width: 100vw;
   min-height: 60vh;
-  overflow-x: hidden;
+  /* clip avoids horizontal scroll without forcing overflow-y:auto (which can crop tall content) */
+  overflow-x: clip;
+  overflow-y: visible;
   position: relative;
   /* font-family: var(--primary-font); */
   letter-spacing: -0.03em;
@@ -96,6 +98,7 @@
   grid-template-rows: auto 1fr auto;
   /* Top bar, main content, bottom */
   position: relative;
+  font-size: 1.15rem;
 }
 
 /* Top Bar */
@@ -106,7 +109,7 @@
 }
 
 #banner .top-left h2 {
-  /* font-size: 3rem; */
+  font-size: clamp(1.9rem, 2.5vw, 2.75rem);
   line-height: 1.2;
   padding: auto;
   font-weight: 400;
@@ -147,13 +150,14 @@
   grid-template-columns: 2fr 6fr 2fr;
   grid-gap: var(--grid-gap);
   align-items: center;
+  overflow: visible;
 }
 
 #banner .left-text,
 #banner .right-text {
   font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.15;
+  font-size: 1.25rem;
+  line-height: 1.2;
   color: var(--color-text-primary);
 }
 
@@ -167,7 +171,7 @@
 
 #banner .left-text h2,
 #banner .right-text h2 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
   color: var(--color-text-primary);
   font-weight: 400;
@@ -176,23 +180,25 @@
 
 #banner .left-text p,
 #banner .right-text p {
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: 1.2rem;
+  line-height: 1.45;
   z-index: 2;
 }
 
 #banner span {
   font-family: var(--secondary-font);
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.88rem;
 }
 
 /* Books Section (center column) */
 #banner .books-wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
+  padding-top: 0.75rem;
+  overflow: visible;
 }
 
 /* Book Item Styles */
@@ -205,11 +211,18 @@
   position: relative;
   width: 220px;
   margin: 0 auto;
+  overflow: visible;
+}
+
+/* Back cover is bitmap text — 1.5× width scales embedded copy ~1.5× */
+#banner .books__item--back .books__container {
+  width: 330px;
 }
 
 #banner .books__cover {
   position: relative;
   will-change: transform;
+  overflow: visible;
 }
 
 #banner .books__hitbox {
@@ -286,11 +299,19 @@
   cursor: pointer;
   will-change: transform;
   z-index: 10;
+  overflow: visible;
 }
 
 #banner .books__image img {
   width: 100%;
+  height: auto;
+  display: block;
   border-radius: 2px 6px 6px 2px;
+}
+
+/* Nudge front cover down so “STOP” isn’t clipped by row / stacking above */
+#banner .books__item--front {
+  margin-top: 0.5rem;
 }
 
 #banner .books__effect {
@@ -335,8 +356,8 @@
   margin-top: 0.75rem;
   text-align: center;
   font-weight: 300;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 1.05rem;
+  line-height: 1.45;
   z-index: 2;
 }
 
@@ -363,6 +384,10 @@
   #banner .books__container {
     width: 180px;
   }
+
+  #banner .books__item--back .books__container {
+    width: 270px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -382,7 +407,7 @@
   }
 
   #banner .top-left h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 }
 

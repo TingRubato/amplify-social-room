@@ -131,7 +131,7 @@ const Banner = () => {
             </p>
           </div>
           <div className="books-wrapper">
-            <div className="books__item">
+            <div className="books__item books__item--front">
               <div className="books__container">
                 <div className="books__cover">
                   <div className="books__back-cover"></div>
@@ -143,7 +143,7 @@ const Banner = () => {
                   <div className="books__image">
                     <img
                       src={frontCover}
-                      alt="Published in March 1, 1988"
+                      alt="Front cover: Stop Struggling with Your Teen"
                     />
                     <div className="books__effect"></div>
                     <div className="books__light"></div>
@@ -155,7 +155,7 @@ const Banner = () => {
                 front cover<br />
                 </div>
             </div>
-            <div className="books__item">
+            <div className="books__item books__item--back">
               <div className="books__container">
                 <div className="books__cover">
                   <div className="books__back-cover"></div>
@@ -167,7 +167,7 @@ const Banner = () => {
                   <div className="books__image">
                     <img
                       src={backCover}
-                      alt="backCover"
+                      alt="Back cover: Stop Struggling with Your Teen"
                     />
                     <div className="books__effect"></div>
                     <div className="books__light"></div>

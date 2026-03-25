@@ -13,13 +13,13 @@ html {
 
 @media screen and (max-width: 1024px) {
   html {
-    font-size: 58%; /* scale down slightly on tablets */
+    font-size: 62.5%; /* keep rem scale readable on tablet */
   }
 }
 
 @media screen and (max-width: 768px) {
   html {
-    font-size: 50%; /* scale down further on mobile */
+    font-size: 56.25%; /* ~9px/rem — gentler than 50% for body copy */
   }
 }
 
