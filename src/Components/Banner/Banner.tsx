@@ -142,6 +142,8 @@ const Banner = () => {
                   </div>
                   <div className="books__image">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={frontCover}
                       alt="Front cover: Stop Struggling with Your Teen"
                     />
@@ -166,6 +168,8 @@ const Banner = () => {
                   </div>
                   <div className="books__image">
                     <img
+                      loading="lazy"
+                      decoding="async"
                       src={backCover}
                       alt="Back cover: Stop Struggling with Your Teen"
                     />

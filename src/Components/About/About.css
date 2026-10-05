@@ -18,9 +18,70 @@
   font-size: 1.8rem;
 }
 
+#about .quiz-download {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  width: fit-content;
+  margin: 0.2rem auto 2rem;
+  padding: 0.9rem 2.4rem 0.9rem 0.9rem;
+  background: #fff;
+  border: 1px solid #d5e6e6;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px -18px rgba(12, 40, 48, 0.7);
+  color: #243044;
+  font-family: "Overlock", Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#about .quiz-download:hover {
+  transform: translateY(-2px);
+  border-color: #00b1b2;
+  box-shadow: 0 16px 32px -14px rgba(0, 177, 178, 0.75);
+}
+
+#about .quiz-download:focus-visible {
+  outline: 2px solid #00b1b2;
+  outline-offset: 3px;
+}
+
+#about .quiz-download__icon {
+  display: grid;
+  place-items: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #00b1b2;
+  color: #fafafa;
+  flex-shrink: 0;
+}
+
+#about .quiz-download__icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+#about .quiz-download__kicker {
+  display: block;
+  color: #f300b4;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+#about .quiz-download__title {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: #243044;
+}
+
 #about video {
   width: 100%;
-  padding: 2rem 2rem;
+  padding: 2rem 2rem 1rem;
   height: auto;
   max-width: 100%;
   display: block;

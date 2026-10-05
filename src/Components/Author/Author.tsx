@@ -1,6 +1,6 @@
 import React from "react";
 import "./Author.css";
-import AuthorImage from "../../assets/Images/evonne-bg.png";
+import AuthorImage from "../../assets/Images/evonne-bg.webp";
 
 const Author: React.FC = () => {
   return (
@@ -12,6 +12,8 @@ const Author: React.FC = () => {
         <div className="author-content">
           <div className="desc">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   className="image-fluid"
                   src={AuthorImage}
                   alt="Evonne Weinhaus"

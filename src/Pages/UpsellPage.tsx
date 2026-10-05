@@ -9,10 +9,8 @@ import SelfStudyCourse from "../assets/Images/self-study-course.png";
 import RevealZoom from "reveal.js/plugin/zoom/zoom.esm";
 import RevealNotes from "reveal.js/plugin/notes/notes.esm";
 import RevealSearch from "reveal.js/plugin/search/search.esm";
-import RevealMarkdown from "reveal.js/plugin/markdown/markdown.esm";
-import RevealHighlight from "reveal.js/plugin/highlight/highlight.esm";
 import Arrow from "../assets/Images/arrow.png";
-import VideoEditor from "../assets/Images/videocover.png";
+import VideoEditor from "../assets/Images/videocover.webp";
 import VideoEditorVideo from "../assets/Media/evonne-welcome.mp4";
 import ImagePlaceHolder from "../assets/Images/image-placeholder.png";
 import GifMemes from "../assets/Images/90F8aUepslB84.gif";
@@ -46,8 +44,6 @@ export function UpsellPage() {
           RevealZoom,
           RevealNotes,
           RevealSearch,
-          RevealMarkdown,
-          RevealHighlight,
         ],
       });
 
@@ -88,6 +84,7 @@ export function UpsellPage() {
             </p>
 
             <video
+              preload="none"
               className="fragment fade-in"
               src={VideoEditorVideo}
               controls
@@ -861,6 +858,7 @@ export function UpsellPage() {
           <section>
             <h2 className="r-fit-text">About Evonne Weinhaus</h2>
             <video
+              preload="none"
               src={VideoEditorVideo}
               className="fragment fade-in data-fragment-index=1"
               controls
